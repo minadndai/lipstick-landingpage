@@ -1,0 +1,255 @@
+/* Mobile-first design */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+    font-family: 'Neuton', serif;
+    font-family: 'Playfair Display', serif;
+    color: #7c3c21;
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+    padding: 1rem;
+    font-weight: bolder;
+    font-style: italic;
+    font-size: 8.5vw;
+}
+
+h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.4rem;
+}
+
+
+/* logo section */
+
+#logo {
+    margin-left: 1vw;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+
+/* top section */
+
+#top img {
+    width: 100vw;
+    opacity: 90%;
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 0 90%);
+}
+
+/* Is there a way to let the top image stay responsive rather than changing position on pc version? (ie, keep the clip-path?) Intially tried putting clip-path in "top"
+div */
+
+#top-container {
+    background-color: #ffbd69;   
+    
+}
+
+#top {
+    height: 100vh;
+    background-image: url(model lipstick.jpg);
+    background-size: cover;
+    background-color: #ffbd69;
+    background-position: top;
+    position: relative;
+    animation: fade 1.5s ease 1;
+}
+
+/* Simple animation to fade in the model image */
+
+@keyframes fade {
+    0% {opacity: 0;}
+    100% {opacity:1;}
+}
+
+/* The gap between the top image and Concept text is a bit to high, anyway to reduce it? */
+
+
+/* Concept section */
+
+#concept {
+    padding-bottom: 8vh; 
+    margin: 0 3vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#concept h1, .concept-text {
+    text-align: right;
+    width: 70vw;
+}
+
+
+/* Double pictures section */
+
+#pictures {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    padding: 7vw;
+    width: 100vw;
+}
+
+.img1 {
+    max-width: 40vw;
+    align-self: flex-end;
+    position: absolute;
+    opacity: 80%;
+    z-index: 1;
+    margin: 7vh -20vw;
+    
+}
+
+.img2 {
+    max-width: 65vw;
+    margin-left: 9vw;
+    z-index: -1;
+}
+
+
+/* Selection section */
+
+#selection {
+    margin-bottom: 3rem;
+}
+
+.selection-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.selection-text {
+    max-width: 50vw;
+    margin: 2rem 3rem;
+    text-align: center;
+}
+
+
+/* Online store section */
+
+#online-store h1 {
+    position: absolute;
+    margin: 7vw 4vw 7vw 9vw;
+    font-size: 13vw;
+    max-width: 100vw;
+}
+
+.girl {
+    opacity: 40%;
+}
+
+
+/* Contact section */
+
+#contact {
+    max-width: 100%;
+    margin: 2rem 0;
+}
+
+.lips {
+    margin-bottom: 3rem;
+}
+
+
+/* Social media icons */
+
+#socialmedia {
+    font-size: 2.5vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+/* Simple transform on hover - change their position */
+
+#socialmedia a:hover {
+   transform: translate(0, -5px);
+}
+
+
+/* Adding shadows to the icons  */
+
+.facebook, .twitter, .instagram, .youtube {
+    box-shadow: 5px 5px #888888;
+    border-radius: 4px;
+}
+
+
+/* Simple background color change on hover */
+
+.facebook:hover {
+    color: #111d5e;
+}
+
+.twitter:hover {
+    color: #3ca59d;
+}
+
+.instagram:hover {
+    color: #bc658d;
+}
+
+.youtube:hover {
+    color:#fa1616;
+}
+
+.copyright {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+
+/* Media query */
+
+@media (min-width: 632px){
+
+    #top img {
+        max-width: 58vw;
+        margin: 4vh 0 0 2vw;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    #concept h1, .concept-text {
+        max-width: 35vw;
+        display: block;
+        padding: 1vw;
+    }
+
+    h3, p{
+        font-size: 3.5vw;
+    }
+
+    .facebook, .twitter, .instagram, .youtube {
+        box-shadow: 10px 10px #888888;
+        border-radius: 6px;
+    }
+
+    .copyright {
+        font-size: 2rem;
+    }
+}
+
+
+/* 
+Notes: learnt to use flexbox to center divs, but still need to work on relative/absolute positioning. Happy with the social media buttons and simple animation, hopefully later
+I can improve on the style and add more complex animation. Might have repeated some code several times throughout the project, need to work on that. Still haven't attempt flexbox grow and shrink much yet, hopefully to practice more on that area. Planning to use 
+more grid in the next project... */
